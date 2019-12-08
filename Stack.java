@@ -12,10 +12,10 @@ class StackModel{
     }
     
     int push(int n){
-        if(this.top + 1 >= this.stack.length){
+        if(top + 1 >= stack.length){
             return -1;
         }else{
-            this.stack[++top] = n;
+            stack[++top] = n;
             return 0;
         }     
     }
@@ -40,21 +40,29 @@ class StackModel{
     }
     
     void max(){
-        int max = stack[0];
-        for(int x: stack){
-            if(max < x)
-                max = x;
-        }
-        System.out.println("MAX item in the Stack: " + max);
+        if(top == -1){
+            System.out.println("Stack is Empty");
+        }else{
+            int max = stack[0];
+            for(int x: stack){
+                if(max < x)
+                    max = x;
+            }
+            System.out.println("MAX item in the Stack: " + max);
+        }     
     }
     
     void min(){
-        int min = stack[0];
-        for(int x: stack){
-            if(min > x && x > -1)
-                min = x;
-        }
-        System.out.println("MIN item in the Stack: " + min);
+        if(top == -1){
+            System.out.println("Stack is Empty");
+        }else{
+            int min = stack[0];
+            for(int x: stack){
+                if(min > x && x > -1)
+                    min = x;
+            }
+            System.out.println("MIN item in the Stack: " + min);
+        }        
     }
     
     void size(){
